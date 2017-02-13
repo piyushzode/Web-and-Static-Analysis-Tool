@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload file</title>
+<body>
+    <table>
+        <tr>
+                <td><h1 id = "message">Welcome ZODE 1001244127 -> SecureProgramming Assigment 2</h1></td>
+                <td><a href="/logout">Logout</a></td>
+        </tr>
+    <tr>
+        <td>
+        <table align="center" item-width="100%">
+                <tr>
+                        <td>
+                                <h3>Welcome {{ username }} </h3>
+                        </td>
+                </tr>
+        <tr><td><hr width="100%"></td></tr>
+        <tr>
+                        <td>
+                                <form action="/upload_page_analyze" method="post" enctype="multipart/form-data">
+                    Select a Programming File(C,C++,Python): <input type="file" name="file_upload"><br><br>
+                    <input type="submit" value="Upload" name="Submit"><br><br>
+                                </form>
+                        </td>
+                </tr>
+                <tr><td><hr width="100%"></td></tr>
+        </table>
+        </td>
+        </tr>
+        <tr>
+                <td>
+                        <table class="striped" border=1>
+                                <tr class="header">
+                                                <td>Username</td>
+                                                <td>Filename</td>
+                                                <td>Tool Used</td>
+                                                <td>File Contents</td>
+                                                <td>Result</td>
+                                </tr>
+                                {% for item in items %}
+                                <tr>
+                                        <td>{{ item.username }}</td>
+                                        <td>{{ item.filename }}</td>
+                                        <td>{{ item.tool }}</td>
+                                        <td>{{ item.file_content }}</td>
+                                        <td>{{ item.file_result }}</td>
+                                </tr>
+                                {% endfor %}
+                        </table>
+                </td>
+    </tr>
+    </table>
+</body>
+</html>
